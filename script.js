@@ -57,8 +57,16 @@ function getAutoChoice() {
 }
 
 function easyMode() {
-    const choices = ['🪨', '📄', '✂️'];
-    return choices[Math.floor(Math.random() * 3)];
+    if (playerChoice === '🪨'){
+        const choices = ['🪨', '✂️'];
+        return choices[Math.floor(Math.random() * 2)];
+    };
+    if (playerChoice === '📄'){
+        const choices = ['🪨', '📄'];
+        return choices[Math.floor(Math.random() * 2)];
+    };
+    const choices = [ '📄', '✂️'];
+    return choices[Math.floor(Math.random() * 2)];
 }
 
 function mediumMode() {
@@ -67,9 +75,16 @@ function mediumMode() {
 }
 
 function hardMode() {
-    if (playerChoice === '🪨') return '📄';
-    if (playerChoice === '📄') return '✂️';
-    return '🪨';
+    if (playerChoice === '🪨') {
+        const choices = [ '📄', '🪨'];
+        return choices[Math.floor(Math.random() * 2)];
+    };
+    if (playerChoice === '📄') {
+        const choices = [ '📄', '✂️'];
+        return choices[Math.floor(Math.random() * 2)];
+    };
+    const choices = ['🪨', '✂️'];
+    return choices[Math.floor(Math.random() * 2)];
 }
 
 async function showAutoChoiceAnimation() {

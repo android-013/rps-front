@@ -11,13 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".game-container").appendChild(resultMessage);
 
     // Player selects move
-    choiceButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            playerChoice = choices[index];
-            playerImage.src = `${playerChoice}.png`; // Assume images are named rock.png, paper.png, scissors.png
-            resetHighlight();
+    document.addEventListener("DOMContentLoaded", () => {
+        const modeButtons = document.querySelectorAll(".mode-btn");
+        const modeDisplay = document.getElementById("mode-display");
+    
+        // Set the active mode when a button is clicked
+        modeButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                // Remove active class from all buttons
+                modeButtons.forEach(btn => btn.classList.remove("active"));
+    
+                // Add active class to the selected button
+                button.classList.add("active");
+    
+                // Update mode display text
+                modeDisplay.textContent = `Mode: ${button.dataset.mode}`;
+            });
         });
-    });
+    });    
 
     // Play button event
     playButton.addEventListener("click", () => {

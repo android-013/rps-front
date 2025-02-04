@@ -1,6 +1,7 @@
 let mode = 'medium';
 let playerChoice = '';
 let autoChoice = '';
+let resultDisplay = document.getElementById('result');
 
 const modes = document.querySelectorAll('.modes button');
 const playerDisplay = document.getElementById('playerDisplay');
@@ -12,6 +13,7 @@ modes.forEach(button => {
     button.addEventListener('click', () => {
         mode = button.id;
         resetGame();
+        updateModeButtonGlow();
     });
 });
 
@@ -57,15 +59,15 @@ function hardMode() {
 
 function determineWinner() {
     if (playerChoice === autoChoice) {
-        alert('It\'s a draw!');
+        resultDisplay.textContent = 'It\'s a draw!';
     } else if (
         (playerChoice === '🪨' && autoChoice === '✂️') ||
         (playerChoice === '📄' && autoChoice === '🪨') ||
         (playerChoice === '✂️' && autoChoice === '📄')
     ) {
-        alert('You win!');
+        resultDisplay.textContent = 'You win!';
     } else {
-        alert('You lose!');
+        resultDisplay.textContent = 'You lose!';
     }
 }
 
@@ -74,4 +76,14 @@ function resetGame() {
     autoChoice = '';
     playerDisplay.textContent = 'Player: 🧑';
     autoDisplay.textContent = 'Auto: 🤖';
+    resultDisplay.textContent = '';
+}
+
+function updateModeButtonGlow() {
+    modes.forEach(button => {
+        button.classList.remove('active');
+        if (button.id === mode) {
+            button.classList.add('active');
+        }
+    });
 }

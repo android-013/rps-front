@@ -30,6 +30,10 @@ body {
     background-color: #0056b3;
 }
 
+.modes button.active {
+    box-shadow: 0 0 10px 3px #007BFF;
+}
+
 .display {
     font-size: 1.5rem;
     margin: 10px;
@@ -65,4 +69,11 @@ body {
 
 #playBtn:hover {
     background-color: #218838;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
 }

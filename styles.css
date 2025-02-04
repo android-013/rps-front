@@ -67,3 +67,19 @@ img {
 .choice-btn:hover {
     background-color: #bbb;
 }
+
+.play-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background-color: #218838;
+}

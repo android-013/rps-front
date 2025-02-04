@@ -1,126 +1,68 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-
-.game-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-
-.mode-selection {
-    margin-bottom: 20px;
-}
-
-.mode-btn {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.mode-btn.active {
-    background-color: #28a745; /* Green highlight for active mode */
-    color: white;
-    font-weight: bold;
-}
-
-.mode-btn:hover {
-    background-color: #0056b3;
-}
-
-.game-display {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
 }
 
-.player, .computer {
-    flex: 1;
-    padding: 10px;
-}
-
-.player p, .computer p {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-img {
-    width: 100px;
-    height: 100px;
+.game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
-    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.controls {
-    margin-top: 10px;
-}
-
-.choice-btn {
-    font-size: 30px;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    background-color: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.choice-btn:hover {
-    background-color: #bbb;
-}
-
-.play-btn {
-    display: block;
-    margin: 20px auto;
+.modes button {
     padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    background-color: #28a745;
+    margin: 5px;
+    background-color: #007BFF;
     color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.play-btn:hover {
+.modes button:hover {
+    background-color: #0056b3;
+}
+
+.display {
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.choices {
+    margin-top: 20px;
+}
+
+.choice-btn {
+    font-size: 2rem;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.choice-btn:hover {
+    background-color: #e0e0e0;
+}
+
+#playBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#playBtn:hover {
     background-color: #218838;
-}
-
-.result-message {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.glow-green {
-    background-color: lightgreen;
-}
-
-.glow-red {
-    background-color: lightcoral;
-}
-
-.glow-yellow {
-    background-color: yellow;
-}
-
-#player-choice, #computer-choice {
-    font-size: 50px;
-    margin: 10px 0;
 }

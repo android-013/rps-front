@@ -5,39 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="game-container">
-        <h2 id="mode-display">Mode: Medium</h2>
-
-        <div class="mode-selection">
-            <button class="mode-btn" id="easy" data-mode="Easy">Easy</button>
-            <button class="mode-btn active" id="medium" data-mode="Medium">Medium</button>
-            <button class="mode-btn" id="hard" data-mode="Hard">Hard</button>
+        <div class="modes">
+            <button id="easy">Easy</button>
+            <button id="medium">Medium</button>
+            <button id="hard">Hard</button>
         </div>
-
-        <div class="game-display">
-            <div class="game-display">
-                <div class="player">
-                    <p>Player</p>
-                    <p id="player-choice">❔</p>
-                </div>
-                <div class="computer">
-                    <p>Computer</p>
-                    <p id="computer-choice">❔</p>
-                </div>
-            </div>            
+        
+        <div class="displays">
+            <div class="display" id="autoDisplay">Auto: 🤖</div>
+            <div class="display" id="playerDisplay">Player: 🧑</div>
         </div>
-
-        <div class="controls">
-            <button class="choice-btn" data-choice="rock">✊</button>
-            <button class="choice-btn" data-choice="paper">✋</button>
-            <button class="choice-btn" data-choice="scissors">✌️</button>
+        
+        <div class="choices">
+            <button class="choice-btn" id="rock">🪨</button>
+            <button class="choice-btn" id="paper">📄</button>
+            <button class="choice-btn" id="scissors">✂️</button>
         </div>
-
-        <button class="play-btn">Play</button>
-        <p id="result-message"></p>
+        
+        <button id="playBtn">Play</button>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

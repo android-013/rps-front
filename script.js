@@ -12,39 +12,51 @@ const choiceBtns = document.querySelectorAll('.choice-btn');
 
 modes.forEach(button => {
     button.addEventListener('click', () => {
+        if (isPlaying) return; // Prevent mode change while game is running
+
         mode = button.id;
         resetGame();
         updateModeButtonGlow();
+
+        resultDisplay.textContent = `Mode: ${mode.charAt(0).toUpperCase() + mode.slice(1)}`; // Display current mode
     });
 });
+
 
 choiceBtns.forEach(button => {
     button.addEventListener('click', () => {
         if (isPlaying) return; // Prevent changes while playing
         playerChoice = button.innerHTML;
-        playerDisplay.textContent = `Player: ${playerChoice}`;
+        playerDisplay.innerHTML = playerChoice; // Show only the symbol
     });
 });
 
+
 playBtn.addEventListener('click', async () => {
-    if (isPlaying) return; // Prevent multiple clicks on the Play button
-    if (!playerChoice) return alert('Please choose rock, paper, or scissors!');
-    
+    if (isPlaying) return; // Prevent multiple clicks
+    if (!playerChoice) {
+        resultDisplay.textContent = "Choose Rock, Paper, or Scissors!";
+        return;
+    }
+
     isPlaying = true;
-    playBtn.disabled = true; // Disable play button while the game is running
-    
-    await showAutoChoiceAnimation();
+    playBtn.disabled = true; // Disable play button temporarily
+    resultDisplay.textContent = "Auto is choosing...";
+
+    await showAutoChoiceAnimation(); // Show animation before revealing auto choice
+
     autoChoice = getAutoChoice();
-    autoDisplay.textContent = `Auto: ${autoChoice}`;
-    
-    determineWinner();
-    
-    // Re-enable the play button after 1000ms
+    autoDisplay.innerHTML = autoChoice; // Update auto's choice after animation
+
+    determineWinner(); // Determine and display the result
+
+    // Re-enable the play button after 1 second
     setTimeout(() => {
         isPlaying = false;
         playBtn.disabled = false;
     }, 1000);
 });
+
 
 function getAutoChoice() {
     if (mode === 'easy') {
@@ -91,7 +103,7 @@ async function showAutoChoiceAnimation() {
     const choices = ['🪨', '📄', '✂️'];
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < choices.length; j++) {
-            autoDisplay.textContent = `Auto: ${choices[j]}`;
+            autoDisplay.textContent = `${choices[j]}`;
             await delay(100); // Wait for 100ms before changing
         }
     }
@@ -118,8 +130,8 @@ function determineWinner() {
 function resetGame() {
     playerChoice = '';
     autoChoice = '';
-    playerDisplay.textContent = 'Player: 🧑';
-    autoDisplay.textContent = 'Auto: 🤖';
+    playerDisplay.textContent = '🧑';
+    autoDisplay.textContent = '🤖';
     resultDisplay.textContent = '';
 }
 

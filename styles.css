@@ -5,15 +5,15 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f7f7f7;
+    background-color:  #3B3B98;
 }
 
 .game-container {
     text-align: center;
-    background-color: #fff;
+    background-color: #55E6C1;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .modes button {
@@ -55,6 +55,11 @@ body {
 
 .choice-btn:hover {
     background-color: #e0e0e0;
+}
+
+.choice-btn button.active {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px 3px #007BFF;
 }
 
 #playBtn {
